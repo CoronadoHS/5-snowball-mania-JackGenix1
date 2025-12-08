@@ -8,7 +8,7 @@
 
 import random
 import time
-
+from colorama import init, Fore, Back, Style
 
 def printIntro():
     '''
@@ -19,7 +19,7 @@ def printIntro():
     ' Return: none
     '''
     print("❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️")
-    print("❄️  Welcome to Snowball Mania!❄️")
+    print("❄️ Welcome to Snowball Mania!❄️")
     print("❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️")
 
 
