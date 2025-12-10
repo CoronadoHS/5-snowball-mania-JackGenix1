@@ -110,20 +110,31 @@ def playSnowballFight(players):
     ' 
     ' Return: none
     '''
+
     while (len(players) > 1):
         thrower = getThrower(players)
         victim = getVictim(players, thrower)
         hitResult = getHitResult()
 
+        survives1 = Fore.CYAN + thrower + " throws at " + victim +" and hits, but "  + victim + " survives! "
+        survives2 = Fore.CYAN + thrower + " tries to hit " + victim +" ...and does, but the snowball bounces off and "  + victim + " survives! "
+        survives3 = Fore.CYAN + thrower + " YEETS A HUGE BALL at " + victim + " and hits him but only dealt 1hp, and "  + victim + " survives! "
+        surviveMessages = [survives1, survives2, survives3]
+
+        kill1 = Fore.RED + thrower + " throws and destroys " + victim + " - " + victim + " dies" 
+        kill2 = Fore.RED + victim + " didnt stand a chance against " + thrower + " - " + victim + " dies" 
+        kill3 = Fore.RED + thrower + " throws a fastball at " + victim + " sending them to the ground - " + victim + " dies" 
+        killMessages = [kill1, kill2, kill3]
+
         if (hitResult == True):
             koResults = random.randint(1, 2)
             if (koResults == 1):
-                print (thrower + " throws at " + victim +" and hits, but "  + victim + " survives! ")
+                print (random.choice(surviveMessages))
             else:
-                print(thrower + " throws and destroys " + victim + " - " + victim + " dies" )
+                print(random.choice(killMessages))
                 players.remove(victim)
         else: 
-            print(thrower + " throws at " + victim + " but has bad aim and misses")
+            print(Fore.YELLOW + thrower + " throws at " + victim + " but has bad aim and misses")
             time.sleep(3)
 
      
@@ -151,6 +162,7 @@ def runProgram():
     '
     ' Return: none
     '''
+    init()
     printIntro()
    # testPlayers = ["Landon", "Elam", "X-man", "Jack", "Landon" , "Sam" , "seby"]
     testPlayers = getNames()
